@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Dicee</title>
+    <link rel="stylesheet" href="dice.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Roll the dice</h1>
+ 
+      <div class="dice">
+        <p>Player 1</p>
+        <img id="dice1" src="inverted-dice-1.png">
+      </div>
+ 
+      <div class="dice">
+        <p>Player 2</p>
+        <img id="dice2" src="inverted-dice-6.png">
+      </div>
+ 
+      <div class="roll">
+        <button onclick="roll()">Click me</button>
+ 
+      </div>
+ 
+    </div>
+ 
+<script type="text/javascript">
+  function roll() {
+    var player1 = Math.ceil(Math.random()*6);
+    var player2 = Math.ceil(Math.random()*6);
+    var diceBaseImage = "inverted-dice-x.png";
+    var dice1Image = diceBaseImage.replace("x", String(player1));
+    var dice2Image = diceBaseImage.replace("x", String(player2));
+    document.getElementById('dice1').setAttribute("src", dice1Image);
+    document.getElementById('dice2').setAttribute("src", dice2Image);
+    // if (player1 == 1) {
+    //   document.getElementById('dice1').setAttribute("src", "images/dice1.png");
+    // }
+    // else if (player1 == 2) {
+    //   document.getElementById('dice1').setAttribute("src", "images/dice2.png");
+    // }
+    // else if (player1 == 3) {
+    //   document.getElementById('dice1').setAttribute("src", "images/dice3.png");
+    // }
+    // else if (player1 == 4) {
+    //   document.getElementById('dice1').setAttribute("src", "images/dice4.png");
+    // }
+    // else if (player1 == 5) {
+    //   document.getElementById('dice1').setAttribute("src", "images/dice5.png");
+    // }
+    // else if (player1 == 6) {
+    //   document.getElementById('dice1').setAttribute("src", "images/dice6.png");
+    // }
+    // if (player2 == 1) {
+    //   document.getElementById('dice2').setAttribute("src", "images/dice1.png");
+    // }
+    // else if (player2 == 2) {
+    //   document.getElementById('dice2').setAttribute("src", "images/dice2.png");
+    // }
+    // else if (player2 == 3) {
+    //   document.getElementById('dice2').setAttribute("src", "images/dice3.png");
+    // }
+    // else if (player2 == 4) {
+    //   document.getElementById('dice2').setAttribute("src", "images/dice4.png");
+    // }
+    // else if (player2 == 5) {
+    //   document.getElementById('dice2').setAttribute("src", "images/dice5.png");
+    // }
+    // else if (player2 == 6) {
+    //   document.getElementById('dice2').setAttribute("src", "images/dice6.png");
+    // }
+    if (player1 > player2) {
+      document.querySelector("h1").innerHTML = "🚩 Player 1 Wins!";
+    }
+    else if (player2 > player1) {
+      document.querySelector("h1").innerHTML = "Player 2 Wins! 🚩";
+    }
+    else {document.querySelector("h1").innerHTML = "Draw...";}
+  }
+ 
+</script>
+  </body>
+ 
+  <footer>
+    www.App Brewery.com
+  </footer>
+</html>
